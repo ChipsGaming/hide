@@ -33,3 +33,4 @@ master func readyPlayer():
 
 sync func startGame():
 	get_tree().set_pause(false)
+	get_node("map").startGame()

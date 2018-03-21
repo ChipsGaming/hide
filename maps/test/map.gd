@@ -2,6 +2,16 @@ extends Node2D
 
 var players = {}
 
+func startGame():
+	$Background.play()
+	if get_tree().is_network_server():
+		$Timer.connect("timeout", self, "onMonsterSpawn")
+		$Timer.start()
+
+func onMonsterSpawn():
+	var monster = players.values()[rand_range(0, ceil(players.size() - 1))]
+	monster.rpc("monster")
+
 func createPlayer():
 	var player = load("res://maps/test/models/player.tscn").instance()
 	player.scale = Vector2(0.4, 0.4)

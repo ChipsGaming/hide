@@ -1,27 +1,18 @@
 extends Light2D
 
-const CONSUMPTION = 1
-const RECOVERY = 5
-
-var battery = 100
+onready var batteryEnergy = preload("res://lib/range/StepRange.gd").new(0, 100, 100, 2)
 
 func _process(delta):
 	if enabled:
-		if battery > 0:
-			battery -= CONSUMPTION * delta
-		else:
-			battery = 0
+		batteryEnergy.addStep(-delta)
 	else:
-		if battery < 100:
-			battery += RECOVERY * delta
-		else:
-			battery = 100
+		batteryEnergy.addStep(2 * delta)
 	
-	if battery <= 0:
+	if batteryEnergy.value <= 0:
 		disable()
-	elif battery <= 20:
+	elif batteryEnergy.value <= 20:
 		energy = 0.3
-	elif battery <= 40:
+	elif batteryEnergy.value <= 40:
 		energy = 0.6
 
 func disable():

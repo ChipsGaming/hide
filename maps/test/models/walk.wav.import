@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/walk.wav-2fb3b16f16c2ed3dc4a28b1bb0c924f5.sample"
+
+[deps]
+
+source_file="res://maps/test/models/walk.wav"
+source_md5="0dfca328f4e9e9e98a6774693d7a249c"
+
+dest_files=[ "res://.import/walk.wav-2fb3b16f16c2ed3dc4a28b1bb0c924f5.sample" ]
+dest_md5="99dc24f98fadd6aba94639f6422bf969"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=true
+compress/mode=0

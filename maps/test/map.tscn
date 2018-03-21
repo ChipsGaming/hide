@@ -1,14 +1,15 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://maps/test/map.gd" type="Script" id=1]
 [ext_resource path="res://maps/test/map.png" type="Texture" id=2]
 [ext_resource path="res://maps/test/light.png" type="Texture" id=3]
+[ext_resource path="res://maps/test/background.ogg" type="AudioStream" id=4]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 
 closed = true
 cull_mode = 0
-polygon = PoolVector2Array( 126, -198, 88, -198, 88, -568, 504, -568, 504, -256, 680, -256, 680, 208, 624, 272, 544, 272, 544, 512, 472, 584, -472, 584, -532, 512, -532, 252, -616, 252, -664, 212, -664, -236, -496, -236, -496, -524, -440, -568, 88, -568, 88, -196, 88, -84, -68, -84, -68, -218, -278, -218, -278, 234, -116, 234, -116, 240, -220, 240, -220, 352, -230, 352, -230, 240, -284, 240, -284, -224, -76, -224, -76, -520, -448, -520, -448, -218, -354, -218, -354, -172, -386, -116, -400, -108, -400, -188, -628, -188, -628, 212, -398, 212, -398, 58, -356, 58, -356, 242, -480, 242, -480, 512, -232, 512, -232, 422, -222, 422, -222, 512, -2, 512, -2, 316, 84, 316, 84, 324, 6, 324, 6, 512, 170, 512, 170, 324, 150, 324, 150, 314, 180, 314, 180, 512, 492, 512, 492, 240, 366, 240, 366, 62, 404, 62, 404, 216, 632, 216, 632, -202, 404, -202, 404, -12, 366, -12, 366, -226, 452, -226, 452, -520, 104, -520, 104, -226, 126, -226 )
+polygon = PoolVector2Array( 126, -198, 88, -198, 88, -568, 504, -568, 504, -256, 680, -256, 680, 208, 624, 272, 544, 272, 544, 512, 472, 584, -472, 584, -532, 512, -532, 252, -616, 252, -664, 212, -664, -236, -496, -236, -496, -524, -440, -568, 88, -568, 88, -196, 88, -84, -68, -84, -68, -218, -278, -218, -278, 234, -116, 234, -116, 240, -218, 240, -218, 352, -230, 352, -230, 240, -284, 240, -284, -224, -76, -224, -76, -520, -448, -520, -448, -218, -354, -218, -354, -172, -386, -116, -400, -108, -400, -188, -628, -188, -628, 212, -398, 212, -398, 58, -356, 58, -356, 242, -480, 242, -480, 512, -232, 512, -232, 422, -222, 422, -222, 512, -2, 512, -2, 316, 84, 316, 84, 324, 6, 324, 6, 512, 170, 512, 170, 324, 150, 324, 150, 314, 180, 314, 180, 512, 492, 512, 492, 240, 366, 240, 366, 62, 404, 62, 404, 216, 632, 216, 632, -202, 404, -202, 404, -12, 366, -12, 366, -226, 452, -226, 452, -520, 104, -520, 104, -226, 126, -226 )
 
 [sub_resource type="OccluderPolygon2D" id=2]
 
@@ -43,6 +44,7 @@ color = Color( 0.0234375, 0.0234375, 0.0234375, 1 )
 
 [node name="Body" type="StaticBody2D" parent="." index="1"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -56,6 +58,8 @@ bounce = 0.0
 texture = ExtResource( 2 )
 
 [node name="Light" type="Node2D" parent="Body" index="1"]
+
+editor/display_folded = true
 
 [node name="1" type="Light2D" parent="Body/Light" index="0"]
 
@@ -333,5 +337,23 @@ position = Vector2( 160, 16 )
 shape = SubResource( 5 )
 
 [node name="Players" type="Node2D" parent="." index="2"]
+
+[node name="Timer" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 5.0
+one_shot = true
+autostart = false
+
+[node name="Background" type="AudioStreamPlayer2D" parent="." index="4"]
+
+position = Vector2( 280, 468 )
+stream = ExtResource( 4 )
+volume_db = -20.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 

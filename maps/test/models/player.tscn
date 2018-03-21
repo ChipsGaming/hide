@@ -1,13 +1,22 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://maps/test/models/player.gd" type="Script" id=1]
 [ext_resource path="res://maps/test/models/player.png" type="Texture" id=2]
 [ext_resource path="res://maps/test/models/light.png" type="Texture" id=3]
 [ext_resource path="res://maps/test/models/flashlight.gd" type="Script" id=4]
+[ext_resource path="res://maps/test/models/monster_light.png" type="Texture" id=5]
+[ext_resource path="res://maps/test/models/walk.wav" type="AudioStream" id=6]
+[ext_resource path="res://maps/test/models/run.wav" type="AudioStream" id=7]
+[ext_resource path="res://maps/test/models/dyspnea.wav" type="AudioStream" id=8]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="CapsuleShape2D" id=1]
 
-resource_name = "run"
+custom_solver_bias = 0.0
+radius = 29.4108
+height = 8.36313
+
+[sub_resource type="Animation" id=2]
+
 length = 0.6
 loop = true
 step = 0.1
@@ -24,9 +33,8 @@ tracks/0/keys = {
 "values": [ Rect2( 192, 0, 96, 80 ), Rect2( 96, 0, 96, 80 ), Rect2( 288, 80, 96, 80 ), Rect2( 192, 80, 96, 80 ), Rect2( 96, 80, 96, 80 ), Rect2( 288, 0, 96, 80 ) ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 
-resource_name = "stay"
 length = 0.01
 loop = false
 step = 0.1
@@ -43,9 +51,8 @@ tracks/0/keys = {
 "values": [ Rect2( 288, 0, 96, 80 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 
-resource_name = "walk"
 length = 1.2
 loop = true
 step = 0.1
@@ -62,16 +69,10 @@ tracks/0/keys = {
 "values": [ Rect2( 192, 0, 96, 80 ), Rect2( 96, 0, 96, 80 ), Rect2( 288, 80, 96, 80 ), Rect2( 192, 80, 96, 80 ), Rect2( 96, 80, 96, 80 ), Rect2( 288, 0, 96, 80 ) ]
 }
 
-[sub_resource type="CapsuleShape2D" id=4]
-
-custom_solver_bias = 0.0
-radius = 29.4108
-height = 8.36313
-
 [node name="Player" type="Node2D"]
 
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Visibility" ]
 __meta__ = {
 "_edit_horizontal_guides_": [  ],
 "_edit_vertical_guides_": [  ]
@@ -146,17 +147,12 @@ region_enabled = true
 region_rect = Rect2( 288, 0, 96, 80 )
 _sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
 
-[node name="Animation" type="AnimationPlayer" parent="Body" index="1"]
+[node name="Collision" type="CollisionShape2D" parent="Body" index="1"]
 
-root_node = NodePath("../Sprite")
-autoplay = ""
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
-anims/run = SubResource( 1 )
-anims/stay = SubResource( 2 )
-anims/walk = SubResource( 3 )
-blend_times = [  ]
+position = Vector2( 4.59422, 0.255234 )
+rotation = 1.5708
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Flashlight" type="Light2D" parent="Body" index="2"]
 
@@ -186,7 +182,33 @@ shadow_item_cull_mask = 1
 script = ExtResource( 4 )
 _sections_unfolded = [ "Range", "Shadow", "Transform" ]
 
-[node name="Camera" type="Camera2D" parent="Body" index="3"]
+[node name="MonsterLight" type="Light2D" parent="Body" index="3"]
+
+scale = Vector2( 2, 2 )
+enabled = false
+editor_only = false
+texture = ExtResource( 5 )
+offset = Vector2( 0, 0 )
+texture_scale = 1.0
+color = Color( 0.578125, 0.173889, 0.173889, 1 )
+energy = 0.7
+mode = 0
+range_height = 0.0
+range_z_min = -1024
+range_z_max = 1024
+range_layer_min = 0
+range_layer_max = 0
+range_item_cull_mask = 1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_buffer_size = 2048
+shadow_gradient_length = 0.0
+shadow_filter = 0
+shadow_filter_smooth = 0.0
+shadow_item_cull_mask = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="Camera" type="Camera2D" parent="Body" index="4"]
 
 offset = Vector2( -280, -120 )
 anchor_mode = 0
@@ -213,11 +235,46 @@ editor_draw_limits = false
 editor_draw_drag_margin = false
 _sections_unfolded = [ "Transform" ]
 
-[node name="Collision" type="CollisionShape2D" parent="Body" index="4"]
+[node name="Animation" type="AnimationPlayer" parent="Body" index="5"]
 
-position = Vector2( 4.59422, 0.255234 )
-rotation = 1.5708
-shape = SubResource( 4 )
-_sections_unfolded = [ "Transform" ]
+root_node = NodePath("../Sprite")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/run = SubResource( 2 )
+anims/stay = SubResource( 3 )
+anims/walk = SubResource( 4 )
+blend_times = [  ]
+
+[node name="Walk" type="AudioStreamPlayer2D" parent="Body" index="6"]
+
+stream = ExtResource( 6 )
+volume_db = -25.0
+autoplay = false
+max_distance = 500.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Run" type="AudioStreamPlayer2D" parent="Body" index="7"]
+
+stream = ExtResource( 7 )
+volume_db = -20.0
+autoplay = false
+max_distance = 1000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Dyspnea" type="AudioStreamPlayer2D" parent="Body" index="8"]
+
+stream = ExtResource( 8 )
+volume_db = -25.0
+autoplay = false
+max_distance = 1000.0
+attenuation = -2.0
+bus = "Master"
+area_mask = 1
 
 
