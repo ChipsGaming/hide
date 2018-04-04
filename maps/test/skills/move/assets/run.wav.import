@@ -2,14 +2,14 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/run.wav-bcdc81a1049baacd7b33e965b2ceb4ed.sample"
+path="res://.import/run.wav-705bb396c24381d257547b155147140a.sample"
 
 [deps]
 
-source_file="res://maps/test/models/run.wav"
+source_file="res://maps/test/skills/move/assets/run.wav"
 source_md5="b72d4bbb5559a352f5867d02accb2cc5"
 
-dest_files=[ "res://.import/run.wav-bcdc81a1049baacd7b33e965b2ceb4ed.sample" ]
+dest_files=[ "res://.import/run.wav-705bb396c24381d257547b155147140a.sample" ]
 dest_md5="b42408e5f750e0f5eb6efc2f3260ddbd"
 
 [params]

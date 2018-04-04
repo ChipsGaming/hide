@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/background.ogg-6e8104df9e7db6b12c51b53616e6b055.oggstr"
+
+[deps]
+
+source_file="res://maps/test/assets/background.ogg"
+source_md5="7eb4687d048e93dfbc5700897531a1c1"
+
+dest_files=[ "res://.import/background.ogg-6e8104df9e7db6b12c51b53616e6b055.oggstr" ]
+dest_md5="eb9a02f0b7fc309d370097a5dc8e0e52"
+
+[params]
+
+loop=true
+loop_offset=0

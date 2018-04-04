@@ -2,14 +2,14 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/light.png-d5fe1f2814b65e8e9c179e996f9b1e71.stex"
+path="res://.import/texture.png-adb426c2056c73f4fbe859c27adea51d.stex"
 
 [deps]
 
-source_file="res://maps/test/models/light.png"
+source_file="res://maps/test/skills/flashlight/assets/texture.png"
 source_md5="8172ca80cda987018df2b2925fd4db19"
 
-dest_files=[ "res://.import/light.png-d5fe1f2814b65e8e9c179e996f9b1e71.stex" ]
+dest_files=[ "res://.import/texture.png-adb426c2056c73f4fbe859c27adea51d.stex" ]
 dest_md5="79c75b3c63c1bbcd03de022a8780478f"
 
 [params]

@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://maps/test/skills/fear/scripts/skill.gd" type="Script" id=1]
+[ext_resource path="res://maps/test/skills/fear/assets/fear.wav" type="AudioStream" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 8.0
+
+[node name="skill" type="Area2D"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+shyness = 10
+durability = 20
+
+[node name="collision" type="CollisionShape2D" parent="." index="0"]
+
+shape = SubResource( 1 )
+
+[node name="fear" type="AudioStreamPlayer2D" parent="." index="1"]
+
+stream = ExtResource( 2 )
+volume_db = -20.0
+autoplay = false
+max_distance = 1000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[connection signal="area_entered" from="." to="." method="onLightEnter"]
+
+[connection signal="area_exited" from="." to="." method="onLightExit"]
+
+

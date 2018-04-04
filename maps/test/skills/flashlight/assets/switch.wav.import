@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/switch.wav-193bfb117cd6eb249fe0a6522e983bfb.sample"
+
+[deps]
+
+source_file="res://maps/test/skills/flashlight/assets/switch.wav"
+source_md5="bb16fa001ff1d1b747b1ab59561cbd38"
+
+dest_files=[ "res://.import/switch.wav-193bfb117cd6eb249fe0a6522e983bfb.sample" ]
+dest_md5="a376c9322d91ea952fe4de6316a2033d"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

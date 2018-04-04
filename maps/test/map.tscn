@@ -1,38 +1,49 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://maps/test/map.gd" type="Script" id=1]
-[ext_resource path="res://maps/test/map.png" type="Texture" id=2]
-[ext_resource path="res://maps/test/light.png" type="Texture" id=3]
-[ext_resource path="res://maps/test/background.ogg" type="AudioStream" id=4]
-
-[sub_resource type="OccluderPolygon2D" id=1]
-
-closed = true
-cull_mode = 0
-polygon = PoolVector2Array( 126, -198, 88, -198, 88, -568, 504, -568, 504, -256, 680, -256, 680, 208, 624, 272, 544, 272, 544, 512, 472, 584, -472, 584, -532, 512, -532, 252, -616, 252, -664, 212, -664, -236, -496, -236, -496, -524, -440, -568, 88, -568, 88, -196, 88, -84, -68, -84, -68, -218, -278, -218, -278, 234, -116, 234, -116, 240, -218, 240, -218, 352, -230, 352, -230, 240, -284, 240, -284, -224, -76, -224, -76, -520, -448, -520, -448, -218, -354, -218, -354, -172, -386, -116, -400, -108, -400, -188, -628, -188, -628, 212, -398, 212, -398, 58, -356, 58, -356, 242, -480, 242, -480, 512, -232, 512, -232, 422, -222, 422, -222, 512, -2, 512, -2, 316, 84, 316, 84, 324, 6, 324, 6, 512, 170, 512, 170, 324, 150, 324, 150, 314, 180, 314, 180, 512, 492, 512, 492, 240, 366, 240, 366, 62, 404, 62, 404, 216, 632, 216, 632, -202, 404, -202, 404, -12, 366, -12, 366, -226, 452, -226, 452, -520, 104, -520, 104, -226, 126, -226 )
+[ext_resource path="res://maps/test/scripts/map.gd" type="Script" id=1]
+[ext_resource path="res://maps/test/assets/map.png" type="Texture" id=2]
+[ext_resource path="res://maps/test/assets/light.png" type="Texture" id=3]
+[ext_resource path="res://maps/test/assets/background.ogg" type="AudioStream" id=4]
 
 [sub_resource type="OccluderPolygon2D" id=2]
 
 closed = true
 cull_mode = 0
-polygon = PoolVector2Array( 180, 242, 296, 242, 296, -226, 212, -226, 212, -200, 264, -200, 264, 234, 180, 234 )
+polygon = PoolVector2Array( 126, -198, 88, -198, 88, -568, 504, -568, 504, -256, 680, -256, 680, 208, 624, 272, 544, 272, 544, 512, 472, 584, -472, 584, -532, 512, -532, 252, -616, 252, -664, 212, -664, -236, -496, -236, -496, -524, -440, -568, 88, -568, 88, -196, 88, -84, -68, -84, -68, -218, -278, -218, -278, 234, -116, 234, -116, 240, -218, 240, -218, 352, -230, 352, -230, 240, -284, 240, -284, -224, -76, -224, -76, -520, -448, -520, -448, -218, -354, -218, -354, -172, -386, -116, -400, -108, -400, -188, -628, -188, -628, 212, -398, 212, -398, 58, -356, 58, -356, 242, -480, 242, -480, 512, -232, 512, -232, 422, -222, 422, -222, 512, -2, 512, -2, 316, 84, 316, 84, 324, 6, 324, 6, 512, 170, 512, 170, 324, 150, 324, 150, 314, 180, 314, 180, 512, 492, 512, 492, 240, 366, 240, 366, 62, 404, 62, 404, 216, 632, 216, 632, -202, 404, -202, 404, -12, 366, -12, 366, -226, 452, -226, 452, -520, 104, -520, 104, -226, 126, -226 )
 
 [sub_resource type="OccluderPolygon2D" id=3]
 
 closed = true
 cull_mode = 0
-polygon = PoolVector2Array( -32, 238, -32, 244, 86, 244, 86, 238 )
+polygon = PoolVector2Array( 180, 242, 296, 242, 296, -226, 212, -226, 212, -200, 264, -200, 264, 234, 180, 234 )
 
 [sub_resource type="OccluderPolygon2D" id=4]
 
 closed = true
 cull_mode = 0
+polygon = PoolVector2Array( -32, 238, -32, 244, 86, 244, 86, 238 )
+
+[sub_resource type="OccluderPolygon2D" id=5]
+
+closed = true
+cull_mode = 0
 polygon = PoolVector2Array( 140, -48, 140, 80, 178, 80, 178, -48 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="OccluderPolygon2D" id=6]
+
+closed = true
+cull_mode = 0
+polygon = PoolVector2Array( -558, 38, -558, 94, -422, 94, -422, 38 )
+
+[sub_resource type="RectangleShape2D" id=7]
 
 custom_solver_bias = 0.0
 extents = Vector2( 24, 68 )
+
+[sub_resource type="RectangleShape2D" id=8]
+
+custom_solver_bias = 0.0
+extents = Vector2( 68, 28 )
 
 [node name="Map" type="Node2D" index="0"]
 
@@ -44,7 +55,6 @@ color = Color( 0.0234375, 0.0234375, 0.0234375, 1 )
 
 [node name="Body" type="StaticBody2D" parent="." index="1"]
 
-editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -59,11 +69,9 @@ texture = ExtResource( 2 )
 
 [node name="Light" type="Node2D" parent="Body" index="1"]
 
-editor/display_folded = true
-
 [node name="1" type="Light2D" parent="Body/Light" index="0"]
 
-position = Vector2( 260, -52 )
+position = Vector2( 262, -58 )
 enabled = true
 editor_only = false
 texture = ExtResource( 3 )
@@ -86,85 +94,29 @@ shadow_filter = 0
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
 _sections_unfolded = [ "Shadow" ]
+
+[node name="area" type="Area2D" parent="Body/Light/1" index="0" groups=[
+"light",
+]]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="collision" type="CollisionPolygon2D" parent="Body/Light/1/area" index="0"]
+
+visible = false
+build_mode = 0
+polygon = PoolVector2Array( 2, -92, 2, 92, -22, 90, -46, 80, -64, 66, -80, 46, -88, 24, -92, 0, -88, -24, -80, -46, -66, -64, -46, -80, -24, -88 )
 
 [node name="2" type="Light2D" parent="Body/Light" index="1"]
 
-position = Vector2( 260, 100 )
-enabled = true
-editor_only = false
-texture = ExtResource( 3 )
-offset = Vector2( 0, 0 )
-texture_scale = 1.0
-color = Color( 1, 1, 1, 1 )
-energy = 1.0
-mode = 0
-range_height = 0.0
-range_z_min = -1024
-range_z_max = 1024
-range_layer_min = 0
-range_layer_max = 0
-range_item_cull_mask = 1
-shadow_enabled = true
-shadow_color = Color( 0, 0, 0, 0 )
-shadow_buffer_size = 2048
-shadow_gradient_length = 0.0
-shadow_filter = 0
-shadow_filter_smooth = 0.0
-shadow_item_cull_mask = 1
-
-[node name="3" type="Light2D" parent="Body/Light" index="2"]
-
-position = Vector2( 488, 364 )
-enabled = true
-editor_only = false
-texture = ExtResource( 3 )
-offset = Vector2( 0, 0 )
-texture_scale = 1.0
-color = Color( 1, 1, 1, 1 )
-energy = 1.0
-mode = 0
-range_height = 0.0
-range_z_min = -1024
-range_z_max = 1024
-range_layer_min = 0
-range_layer_max = 0
-range_item_cull_mask = 1
-shadow_enabled = true
-shadow_color = Color( 0, 0, 0, 0 )
-shadow_buffer_size = 2048
-shadow_gradient_length = 0.0
-shadow_filter = 0
-shadow_filter_smooth = 0.0
-shadow_item_cull_mask = 1
-
-[node name="4" type="Light2D" parent="Body/Light" index="3"]
-
-position = Vector2( 624, -28 )
-enabled = true
-editor_only = false
-texture = ExtResource( 3 )
-offset = Vector2( 0, 0 )
-texture_scale = 1.0
-color = Color( 1, 1, 1, 1 )
-energy = 1.0
-mode = 0
-range_height = 0.0
-range_z_min = -1024
-range_z_max = 1024
-range_layer_min = 0
-range_layer_max = 0
-range_item_cull_mask = 1
-shadow_enabled = true
-shadow_color = Color( 0, 0, 0, 0 )
-shadow_buffer_size = 2048
-shadow_gradient_length = 0.0
-shadow_filter = 0
-shadow_filter_smooth = 0.0
-shadow_item_cull_mask = 1
-
-[node name="5" type="Light2D" parent="Body/Light" index="4"]
-
-position = Vector2( -236, 436 )
+editor/display_folded = true
+position = Vector2( 260, 104 )
 enabled = true
 editor_only = false
 texture = ExtResource( 3 )
@@ -188,9 +140,28 @@ shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
 _sections_unfolded = [ "Shadow" ]
 
-[node name="6" type="Light2D" parent="Body/Light" index="5"]
+[node name="area" type="Area2D" parent="Body/Light/2" index="0" groups=[
+"light",
+]]
 
-position = Vector2( -440, -288 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="collision" type="CollisionPolygon2D" parent="Body/Light/2/area" index="0"]
+
+visible = false
+build_mode = 0
+polygon = PoolVector2Array( 2, -92, 2, 92, -22, 90, -46, 80, -64, 66, -80, 46, -88, 24, -92, 0, -88, -24, -80, -46, -66, -64, -46, -80, -24, -88 )
+
+[node name="3" type="Light2D" parent="Body/Light" index="2"]
+
+editor/display_folded = true
+position = Vector2( 628, -28 )
 enabled = true
 editor_only = false
 texture = ExtResource( 3 )
@@ -212,10 +183,167 @@ shadow_gradient_length = 0.0
 shadow_filter = 0
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
+_sections_unfolded = [ "Shadow" ]
+
+[node name="area" type="Area2D" parent="Body/Light/3" index="0" groups=[
+"light",
+]]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="collision" type="CollisionPolygon2D" parent="Body/Light/3/area" index="0"]
+
+visible = false
+build_mode = 0
+polygon = PoolVector2Array( 2, -92, 2, 92, -22, 90, -46, 80, -64, 66, -80, 46, -88, 24, -92, 0, -88, -24, -80, -46, -66, -64, -46, -80, -24, -88 )
+
+[node name="4" type="Light2D" parent="Body/Light" index="3"]
+
+editor/display_folded = true
+position = Vector2( -234, 436 )
+enabled = true
+editor_only = false
+texture = ExtResource( 3 )
+offset = Vector2( 0, 0 )
+texture_scale = 1.0
+color = Color( 1, 1, 1, 1 )
+energy = 1.0
+mode = 0
+range_height = 0.0
+range_z_min = -1024
+range_z_max = 1024
+range_layer_min = 0
+range_layer_max = 0
+range_item_cull_mask = 1
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_buffer_size = 2048
+shadow_gradient_length = 0.0
+shadow_filter = 0
+shadow_filter_smooth = 0.0
+shadow_item_cull_mask = 1
+_sections_unfolded = [ "Shadow" ]
+
+[node name="area" type="Area2D" parent="Body/Light/4" index="0" groups=[
+"light",
+]]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="collision" type="CollisionPolygon2D" parent="Body/Light/4/area" index="0"]
+
+visible = false
+build_mode = 0
+polygon = PoolVector2Array( 2, -92, 24, -88, 2, -14, 2, 92, -22, 90, -46, 80, -64, 66, -80, 46, -88, 24, -92, 0, -88, -24, -80, -46, -66, -64, -46, -80, -24, -88 )
+
+[node name="5" type="Light2D" parent="Body/Light" index="4"]
+
+editor/display_folded = true
+position = Vector2( -447, -290 )
+enabled = true
+editor_only = false
+texture = ExtResource( 3 )
+offset = Vector2( 0, 0 )
+texture_scale = 1.0
+color = Color( 1, 1, 1, 1 )
+energy = 1.0
+mode = 0
+range_height = 0.0
+range_z_min = -1024
+range_z_max = 1024
+range_layer_min = 0
+range_layer_max = 0
+range_item_cull_mask = 1
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_buffer_size = 2048
+shadow_gradient_length = 0.0
+shadow_filter = 0
+shadow_filter_smooth = 0.0
+shadow_item_cull_mask = 1
+_sections_unfolded = [ "Shadow" ]
+
+[node name="area" type="Area2D" parent="Body/Light/5" index="0" groups=[
+"light",
+]]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="collision" type="CollisionPolygon2D" parent="Body/Light/5/area" index="0"]
+
+visible = false
+rotation = -3.14102
+build_mode = 0
+polygon = PoolVector2Array( 2, -92, 2, 92, -22, 90, -46, 80, -64, 66, -80, 46, -88, 24, -92, 0, -88, -24, -80, -46, -66, -64, -46, -80, -24, -88 )
+
+[node name="6" type="Light2D" parent="Body/Light" index="5"]
+
+editor/display_folded = true
+position = Vector2( 106, -278 )
+enabled = true
+editor_only = false
+texture = ExtResource( 3 )
+offset = Vector2( 0, 0 )
+texture_scale = 1.0
+color = Color( 0.239216, 0.6, 0.694118, 1 )
+energy = 1.0
+mode = 0
+range_height = 0.0
+range_z_min = -1024
+range_z_max = 1024
+range_layer_min = 0
+range_layer_max = 0
+range_item_cull_mask = 1
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_buffer_size = 2048
+shadow_gradient_length = 0.0
+shadow_filter = 0
+shadow_filter_smooth = 0.0
+shadow_item_cull_mask = 1
+_sections_unfolded = [ "Shadow" ]
+
+[node name="area" type="Area2D" parent="Body/Light/6" index="0" groups=[
+"light",
+]]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="collision" type="CollisionPolygon2D" parent="Body/Light/6/area" index="0"]
+
+visible = false
+rotation = -3.14102
+build_mode = 0
+polygon = PoolVector2Array( -20.0297, -51.9886, 2, -51.66, 2, 92, -22, 90, -46, 80, -64, 66, -80, 46, -88, 24, -92, 0, -88, -24, -80, -46, -66, -64, -46, -80, -34.0491, -85.9806 )
 
 [node name="7" type="Light2D" parent="Body/Light" index="6"]
 
-position = Vector2( -292, 28 )
+editor/display_folded = true
+position = Vector2( -286, 26 )
 enabled = true
 editor_only = false
 texture = ExtResource( 3 )
@@ -238,15 +366,34 @@ shadow_filter = 0
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
 
+[node name="area" type="Area2D" parent="Body/Light/7" index="0" groups=[
+"light",
+]]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="collision" type="CollisionPolygon2D" parent="Body/Light/7/area" index="0"]
+
+visible = false
+build_mode = 0
+polygon = PoolVector2Array( 2, -92, 2, 92, -22, 90, -46, 80, -64, 66, -80, 46, -88, 24, -92, 0, -88, -24, -80, -46, -66, -64, -46, -80, -24, -88 )
+
 [node name="8" type="Light2D" parent="Body/Light" index="7"]
 
-position = Vector2( 108, -272 )
+editor/display_folded = true
+position = Vector2( 169, 378 )
 enabled = true
 editor_only = false
 texture = ExtResource( 3 )
 offset = Vector2( 0, 0 )
 texture_scale = 1.0
-color = Color( 0.245819, 0.60358, 0.699219, 1 )
+color = Color( 0.239216, 0.6, 0.694118, 1 )
 energy = 1.0
 mode = 0
 range_height = 0.0
@@ -262,16 +409,35 @@ shadow_gradient_length = 0.0
 shadow_filter = 0
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
+
+[node name="area" type="Area2D" parent="Body/Light/8" index="0" groups=[
+"light",
+]]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="collision" type="CollisionPolygon2D" parent="Body/Light/8/area" index="0"]
+
+visible = false
+build_mode = 0
+polygon = PoolVector2Array( 0, -54, 0, 92, -22, 90, -46, 80, -64, 66, -80, 46, -88, 24, -92, 0, -88, -24, -80, -46, -66, -64, -46, -80, -20, -54 )
 
 [node name="9" type="Light2D" parent="Body/Light" index="8"]
 
-position = Vector2( 164, 376 )
+editor/display_folded = true
+position = Vector2( 488, 368 )
 enabled = true
 editor_only = false
 texture = ExtResource( 3 )
 offset = Vector2( 0, 0 )
 texture_scale = 1.0
-color = Color( 0.245819, 0.60358, 0.699219, 1 )
+color = Color( 1, 1, 1, 1 )
 energy = 1.0
 mode = 0
 range_height = 0.0
@@ -287,6 +453,24 @@ shadow_gradient_length = 0.0
 shadow_filter = 0
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
+
+[node name="area" type="Area2D" parent="Body/Light/9" index="0" groups=[
+"light",
+]]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="collision" type="CollisionPolygon2D" parent="Body/Light/9/area" index="0"]
+
+visible = false
+build_mode = 0
+polygon = PoolVector2Array( 2, -92, 2, 92, -22, 90, -46, 80, -64, 66, -80, 46, -88, 24, -92, 0, -88, -24, -80, -46, -66, -64, -46, -80, -24, -88 )
 
 [node name="LightOccluder" type="Node2D" parent="Body" index="2"]
 
@@ -294,22 +478,27 @@ editor/display_folded = true
 
 [node name="A" type="LightOccluder2D" parent="Body/LightOccluder" index="0"]
 
-occluder = SubResource( 1 )
+occluder = SubResource( 2 )
 light_mask = 1
 
 [node name="B" type="LightOccluder2D" parent="Body/LightOccluder" index="1"]
 
-occluder = SubResource( 2 )
+occluder = SubResource( 3 )
 light_mask = 1
 
 [node name="C" type="LightOccluder2D" parent="Body/LightOccluder" index="2"]
 
-occluder = SubResource( 3 )
+occluder = SubResource( 4 )
 light_mask = 1
 
 [node name="D" type="LightOccluder2D" parent="Body/LightOccluder" index="3"]
 
-occluder = SubResource( 4 )
+occluder = SubResource( 5 )
+light_mask = 1
+
+[node name="E" type="LightOccluder2D" parent="Body/LightOccluder" index="4"]
+
+occluder = SubResource( 6 )
 light_mask = 1
 
 [node name="Collision" type="CollisionPolygon2D" parent="Body" index="3"]
@@ -334,7 +523,13 @@ polygon = PoolVector2Array( 128, -228, 128, -196, 92, -196, 92, -80, -72, -80, -
 
 visible = false
 position = Vector2( 160, 16 )
-shape = SubResource( 5 )
+shape = SubResource( 7 )
+
+[node name="Collision5" type="CollisionShape2D" parent="Body" index="7"]
+
+visible = false
+position = Vector2( -490, 66 )
+shape = SubResource( 8 )
 
 [node name="Players" type="Node2D" parent="." index="2"]
 

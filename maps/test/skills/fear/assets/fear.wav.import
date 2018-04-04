@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/fear.wav-3954fe774aee368e642cedaac168e77a.sample"
+
+[deps]
+
+source_file="res://maps/test/skills/fear/assets/fear.wav"
+source_md5="18ffcb51eff40ac98dfb10d0f89b2dba"
+
+dest_files=[ "res://.import/fear.wav-3954fe774aee368e642cedaac168e77a.sample" ]
+dest_md5="dcedfccf2e74445e87afcc8b402eb34c"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=true
+compress/mode=0

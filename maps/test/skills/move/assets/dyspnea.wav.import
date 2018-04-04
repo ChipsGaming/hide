@@ -2,14 +2,14 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/dyspnea.wav-adf5f198b90a9f918dadbc60cc33d984.sample"
+path="res://.import/dyspnea.wav-46c2abbde4354e32204877f3baab414c.sample"
 
 [deps]
 
-source_file="res://maps/test/models/dyspnea.wav"
+source_file="res://maps/test/skills/move/assets/dyspnea.wav"
 source_md5="0e09cc15fd8d5f853c639e9da1cbf006"
 
-dest_files=[ "res://.import/dyspnea.wav-adf5f198b90a9f918dadbc60cc33d984.sample" ]
+dest_files=[ "res://.import/dyspnea.wav-46c2abbde4354e32204877f3baab414c.sample" ]
 dest_md5="aa7f95eb3e3eba469a488bd6481606ca"
 
 [params]

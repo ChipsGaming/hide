@@ -2,14 +2,14 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/light.png-b865862740d9c4fa2e3a6ca18bb65279.stex"
+path="res://.import/light.png-22f11ba84dacfcc5dd71e67c721525f7.stex"
 
 [deps]
 
-source_file="res://maps/test/light.png"
+source_file="res://maps/test/assets/light.png"
 source_md5="fe6bd7072b741a52b61a16a09358dc03"
 
-dest_files=[ "res://.import/light.png-b865862740d9c4fa2e3a6ca18bb65279.stex" ]
+dest_files=[ "res://.import/light.png-22f11ba84dacfcc5dd71e67c721525f7.stex" ]
 dest_md5="4458f25394f0e46224f0bd1b236c688f"
 
 [params]

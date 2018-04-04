@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/map.png-e8fe04381a25a3e092e504340e51f1d9.stex"
+path="res://.import/monster_light.png-984c3b0c30bd49e4599a9b99bf8db0c8.stex"
 
 [deps]
 
-source_file="res://maps/test/map.png"
-source_md5="5cc2f4f071b201770cc136927d3aafcd"
+source_file="res://maps/test/models/player/assets/monster_light.png"
+source_md5="dc07dd637d07c4112f7ab046b2c13402"
 
-dest_files=[ "res://.import/map.png-e8fe04381a25a3e092e504340e51f1d9.stex" ]
-dest_md5="4560ae19059e6ab709deaafc433dacef"
+dest_files=[ "res://.import/monster_light.png-984c3b0c30bd49e4599a9b99bf8db0c8.stex" ]
+dest_md5="a64989c5b213ae9a3d07f292d20e25d4"
 
 [params]
 
